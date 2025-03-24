@@ -17,10 +17,11 @@ namespace Final_Project
         public String input = "";
         public double result = 0;
         private BinTree expressionTree = new BinTree();
-
+        HistoryRepository repository;
         public Form1()
         {
             InitializeComponent();
+            repository = new HistoryRepository();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -114,6 +115,8 @@ namespace Final_Project
             result = expressionTree.Calculate(input);
             result = Math.Round(result, 2);
             txtXuat.Text = result.ToString();
+            History history = new History(input, result.ToString());
+            repository.SaveToExcel(history);
         }
 
         private void button3_Click(object sender, EventArgs e)
