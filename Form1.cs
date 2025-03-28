@@ -16,103 +16,105 @@ namespace Final_Project
     {
         public String input = "";
         public double result = 0;
-        private BinTree expressionTree = new BinTree();
+        private BinTree binTree = new BinTree();
+        frmHistory frmHistory;
         HistoryRepository repository;
         public Form1()
         {
             InitializeComponent();
             repository = new HistoryRepository();
+            frmHistory = new frmHistory(this);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void btn0_Click(object sender, EventArgs e)
         {
-            txtNhap.Text += "0 ";
+            txtNhap.Text += "0";
         }
 
         private void btn1_Click(object sender, EventArgs e)
         {
-            txtNhap.Text += "1 ";
+            txtNhap.Text += "1";
         }
 
         private void btn2_Click(object sender, EventArgs e)
         {
-            txtNhap.Text += "2 ";
+            txtNhap.Text += "2";
         }
 
         private void btn3_Click(object sender, EventArgs e)
         {
-            txtNhap.Text += "3 ";
+            txtNhap.Text += "3";
         }
 
         private void btn4_Click(object sender, EventArgs e)
         {
-            txtNhap.Text += "4 ";
+            txtNhap.Text += "4";
         }
 
         private void btn5_Click(object sender, EventArgs e)
         {
-            txtNhap.Text += "5 ";
+            txtNhap.Text += "5";
         }
 
         private void btn6_Click(object sender, EventArgs e)
         {
-            txtNhap.Text += "6 ";
+            txtNhap.Text += "6";
         }
 
         private void btn7_Click(object sender, EventArgs e)
         {
-            txtNhap.Text += "7 ";
+            txtNhap.Text += "7";
         }
 
         private void btn8_Click(object sender, EventArgs e)
         {
-            txtNhap.Text += "8 ";
+            txtNhap.Text += "8";
         }
 
         private void btn9_Click(object sender, EventArgs e)
         {
-            txtNhap.Text += "9 ";
+            txtNhap.Text += "9";
         }
 
         private void btnDiv_Click(object sender, EventArgs e)
         {
-            txtNhap.Text += "/ ";
+            txtNhap.Text += " / ";
         }
 
         private void btnMul_Click(object sender, EventArgs e)
         {
-            txtNhap.Text += "* ";
+            txtNhap.Text += " * ";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            txtNhap.Text += "+ ";
+            txtNhap.Text += " + ";
         }
 
         private void btnMinus_Click(object sender, EventArgs e)
         {
-            txtNhap.Text += "- ";
+            txtNhap.Text += " - ";
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
-            txtNhap.Text += "( ";
+            txtNhap.Text += " ( ";
         }
 
         private void txtClose_Click(object sender, EventArgs e)
         {
-            txtNhap.Text += ") ";
+            txtNhap.Text += " ) ";
         }
 
         private void btnEqual_Click(object sender, EventArgs e)
         {
             input = txtNhap.Text;
-            result = expressionTree.Calculate(input);
+            input = input.Replace(',', '.');
+            result = binTree.Calculate(input);
             result = Math.Round(result, 2);
             txtXuat.Text = result.ToString();
             History history = new History(input, result.ToString());
@@ -123,6 +125,35 @@ namespace Final_Project
         {
             txtXuat.Text = "";
             txtNhap.Text = "";
+        }
+
+        private void btndot_Click(object sender, EventArgs e)
+        {
+            //txtNhap.Text = txtNhap.Text.Remove(txtNhap.Text.Length - 1);
+            txtNhap.Text += ".";
+        }
+
+        private void btnPercent_Click(object sender, EventArgs e)
+        {
+            txtNhap.Text += " % ";
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            txtNhap.Text = txtNhap.Text.Remove(txtNhap.Text.Length - 1);
+        }
+
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+            if (frmHistory == null || frmHistory.IsDisposed)
+            {
+                frmHistory = new frmHistory(this);
+            }
+            frmHistory.Show();
+        }
+        public void UpdateInput(string input)
+        {
+            txtNhap.Text = input;
         }
     }
 }

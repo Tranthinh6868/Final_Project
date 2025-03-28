@@ -44,12 +44,14 @@
             this.btn2 = new System.Windows.Forms.Button();
             this.btn3 = new System.Windows.Forms.Button();
             this.btnMinus = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
+            this.btnPercent = new System.Windows.Forms.Button();
             this.btn0 = new System.Windows.Forms.Button();
             this.btndot = new System.Windows.Forms.Button();
             this.btnEqual = new System.Windows.Forms.Button();
             this.txtNhap = new System.Windows.Forms.TextBox();
             this.txtXuat = new System.Windows.Forms.TextBox();
+            this.btnHistory = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnOpen
@@ -74,12 +76,14 @@
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(197, 275);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 40);
             this.button3.TabIndex = 0;
-            this.button3.Text = "C";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Text = "AC";
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnDiv
@@ -212,13 +216,15 @@
             this.btnMinus.UseVisualStyleBackColor = true;
             this.btnMinus.Click += new System.EventHandler(this.btnMinus_Click);
             // 
-            // button17
+            // btnPercent
             // 
-            this.button17.Location = new System.Drawing.Point(35, 459);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(75, 40);
-            this.button17.TabIndex = 0;
-            this.button17.UseVisualStyleBackColor = true;
+            this.btnPercent.Location = new System.Drawing.Point(35, 459);
+            this.btnPercent.Name = "btnPercent";
+            this.btnPercent.Size = new System.Drawing.Size(75, 40);
+            this.btnPercent.TabIndex = 0;
+            this.btnPercent.Text = "%";
+            this.btnPercent.UseVisualStyleBackColor = true;
+            this.btnPercent.Click += new System.EventHandler(this.btnPercent_Click);
             // 
             // btn0
             // 
@@ -238,6 +244,7 @@
             this.btndot.TabIndex = 0;
             this.btndot.Text = ".";
             this.btndot.UseVisualStyleBackColor = true;
+            this.btndot.Click += new System.EventHandler(this.btndot_Click);
             // 
             // btnEqual
             // 
@@ -272,11 +279,35 @@
             this.txtXuat.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtXuat.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
+            // btnHistory
+            // 
+            this.btnHistory.Location = new System.Drawing.Point(278, 59);
+            this.btnHistory.Name = "btnHistory";
+            this.btnHistory.Size = new System.Drawing.Size(75, 23);
+            this.btnHistory.TabIndex = 2;
+            this.btnHistory.Text = "&History";
+            this.btnHistory.UseVisualStyleBackColor = true;
+            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
+            // 
+            // btnDel
+            // 
+            this.btnDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnDel.ForeColor = System.Drawing.Color.White;
+            this.btnDel.Location = new System.Drawing.Point(278, 232);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(75, 36);
+            this.btnDel.TabIndex = 3;
+            this.btnDel.Text = "DEL";
+            this.btnDel.UseVisualStyleBackColor = false;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(407, 570);
+            this.Controls.Add(this.btnDel);
+            this.Controls.Add(this.btnHistory);
             this.Controls.Add(this.txtXuat);
             this.Controls.Add(this.txtNhap);
             this.Controls.Add(this.btnEqual);
@@ -290,7 +321,7 @@
             this.Controls.Add(this.btn2);
             this.Controls.Add(this.btn9);
             this.Controls.Add(this.btn5);
-            this.Controls.Add(this.button17);
+            this.Controls.Add(this.btnPercent);
             this.Controls.Add(this.btnDiv);
             this.Controls.Add(this.btn1);
             this.Controls.Add(this.btn8);
@@ -301,6 +332,7 @@
             this.Controls.Add(this.btnOpen);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhóm 6";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -325,12 +357,14 @@
         private System.Windows.Forms.Button btn2;
         private System.Windows.Forms.Button btn3;
         private System.Windows.Forms.Button btnMinus;
-        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button btnPercent;
         private System.Windows.Forms.Button btn0;
         private System.Windows.Forms.Button btndot;
         private System.Windows.Forms.Button btnEqual;
         private System.Windows.Forms.TextBox txtNhap;
         private System.Windows.Forms.TextBox txtXuat;
+        private System.Windows.Forms.Button btnHistory;
+        private System.Windows.Forms.Button btnDel;
     }
 }
 
