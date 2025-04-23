@@ -42,14 +42,14 @@
             this.dataGridViewHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewHistory.Location = new System.Drawing.Point(3, 0);
             this.dataGridViewHistory.Name = "dataGridViewHistory";
-            this.dataGridViewHistory.Size = new System.Drawing.Size(510, 351);
+            this.dataGridViewHistory.Size = new System.Drawing.Size(550, 371);
             this.dataGridViewHistory.TabIndex = 0;
             // 
             // frmHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 355);
+            this.ClientSize = new System.Drawing.Size(554, 375);
             this.Controls.Add(this.dataGridViewHistory);
             this.Name = "frmHistory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

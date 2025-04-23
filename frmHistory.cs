@@ -33,7 +33,8 @@ namespace Final_Project
             dataTable.Columns["Output"].ReadOnly = true; // không cho chỉnh sửa cột Output
             dataTable.Columns.Add("Time Event");
             dataTable.Columns["Time Event"].ReadOnly = true; // không cho chỉnh sửa cột Time Event
-            List<History> history = repository.GetAllHistory();
+            List<History> history = HistorySorted();
+            
             history.Reverse(); // hiện date mới nhất lên trên
             foreach (History h in history)
             {
@@ -52,7 +53,24 @@ namespace Final_Project
             // đăng kí sự kiện
             dataGridViewHistory.CellClick += dataGridViewHistory_CellClick;
         }
-
+        //Ứng dụng hàm Exchange sort
+        public List<History> HistorySorted()
+        {
+            List<History> history = repository.GetAllHistory();
+            for (int i = 0; i < history.Count-1; i++)
+            {
+                for (int j = i + 1; j < history.Count; j++)
+                {
+                    if (history[i].TimeEvent > history[j].TimeEvent)
+                    {
+                        History temp = history[i];
+                        history[i] = history[j];
+                        history[j] = temp;
+                    }
+                }
+            }
+            return history;
+        }
         private void dataGridViewHistory_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0 || e.ColumnIndex < 0)

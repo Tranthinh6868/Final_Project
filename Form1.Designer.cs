@@ -52,6 +52,8 @@
             this.txtXuat = new System.Windows.Forms.TextBox();
             this.btnHistory = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
+            this.btnAns = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnOpen
@@ -259,19 +261,20 @@
             // txtNhap
             // 
             this.txtNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNhap.Location = new System.Drawing.Point(35, 93);
+            this.txtNhap.Location = new System.Drawing.Point(35, 66);
             this.txtNhap.Multiline = true;
             this.txtNhap.Name = "txtNhap";
             this.txtNhap.Size = new System.Drawing.Size(318, 63);
             this.txtNhap.TabIndex = 1;
             this.txtNhap.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtNhap.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtNhap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNhap_KeyPress);
             // 
             // txtXuat
             // 
             this.txtXuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtXuat.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtXuat.Location = new System.Drawing.Point(35, 152);
+            this.txtXuat.Location = new System.Drawing.Point(35, 125);
             this.txtXuat.Multiline = true;
             this.txtXuat.Name = "txtXuat";
             this.txtXuat.Size = new System.Drawing.Size(318, 63);
@@ -281,7 +284,7 @@
             // 
             // btnHistory
             // 
-            this.btnHistory.Location = new System.Drawing.Point(278, 59);
+            this.btnHistory.Location = new System.Drawing.Point(278, 32);
             this.btnHistory.Name = "btnHistory";
             this.btnHistory.Size = new System.Drawing.Size(75, 23);
             this.btnHistory.TabIndex = 2;
@@ -301,11 +304,36 @@
             this.btnDel.UseVisualStyleBackColor = false;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
+            // btnAns
+            // 
+            this.btnAns.Location = new System.Drawing.Point(197, 232);
+            this.btnAns.Name = "btnAns";
+            this.btnAns.Size = new System.Drawing.Size(75, 36);
+            this.btnAns.TabIndex = 4;
+            this.btnAns.Text = "ANS";
+            this.btnAns.UseVisualStyleBackColor = true;
+            this.btnAns.Click += new System.EventHandler(this.btnAns_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label1.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.label1.Location = new System.Drawing.Point(0, 557);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(116, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Sản phẩm của Nhóm 6";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(407, 570);
+            this.BackgroundImage = global::Final_Project.Properties.Resources.image44_1614333620_364_width500height800;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(383, 570);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnAns);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnHistory);
             this.Controls.Add(this.txtXuat);
@@ -330,6 +358,7 @@
             this.Controls.Add(this.btn7);
             this.Controls.Add(this.txtClose);
             this.Controls.Add(this.btnOpen);
+            this.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -365,6 +394,8 @@
         private System.Windows.Forms.TextBox txtXuat;
         private System.Windows.Forms.Button btnHistory;
         private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.Button btnAns;
+        private System.Windows.Forms.Label label1;
     }
 }
 

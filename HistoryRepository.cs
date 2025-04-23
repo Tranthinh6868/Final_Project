@@ -42,7 +42,7 @@ public class HistoryRepository
         return tasks;
     }
 
-    // Ghi danh sách User vào Excel (Thêm mới, không ghi đè)
+    // Ghi danh sách phép tính vào Excel (Thêm mới, không ghi đè)
     public String SaveToExcel(List<History> his)
     {
         if (his == null || his.Count == 0)

@@ -113,9 +113,10 @@ namespace Final_Project
         private void btnEqual_Click(object sender, EventArgs e)
         {
             input = txtNhap.Text;
-            input = input.Replace(',', '.');
+            //input = input.Replace('.', ',');
             result = binTree.Calculate(input);
-            result = Math.Round(result, 2);
+            //result = Math.Round(result, 2);
+            //MessageBox.Show("Result: " + result.ToString());
             txtXuat.Text = result.ToString();
             History history = new History(input, result.ToString());
             repository.SaveToExcel(history);
@@ -129,7 +130,7 @@ namespace Final_Project
 
         private void btndot_Click(object sender, EventArgs e)
         {
-            //txtNhap.Text = txtNhap.Text.Remove(txtNhap.Text.Length - 1);
+            
             txtNhap.Text += ".";
         }
 
@@ -140,7 +141,18 @@ namespace Final_Project
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-            txtNhap.Text = txtNhap.Text.Remove(txtNhap.Text.Length - 1);
+            if(txtNhap.Text.Length > 1)
+            {
+                txtNhap.Text = txtNhap.Text.Remove(txtNhap.Text.Length - 1);
+                txtXuat.Text = "";
+            }
+                
+
+            else
+            {
+                txtNhap.Text = "";
+            }
+                
         }
 
         private void btnHistory_Click(object sender, EventArgs e)
@@ -154,6 +166,51 @@ namespace Final_Project
         public void UpdateInput(string input)
         {
             txtNhap.Text = input;
+        }
+
+        private void txtNhap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (sender is TextBox textBox)
+            {
+                if (e.KeyChar == (char)Keys.Enter)
+                {
+                    e.Handled = true;
+                    
+                }
+                else if (e.KeyChar == (char)Keys.Escape)
+                {
+                    e.Handled = true;
+                    textBox.Clear();
+                }
+                else if (e.KeyChar == (char)Keys.Back)
+                {
+                    e.Handled = false; // Cho phép hành vi Backspace mặc định
+                }
+                //else if (e.KeyChar == (char)Keys.Delete)
+                //{
+                //    e.Handled = true;
+                //    textBox.Clear();
+                //}
+                else
+                {
+                    // Cho phép số (0-9), toán tử (+, -, *, /), dấu ngoặc ((), dấu chấm (.)
+                    char c = e.KeyChar;
+                    if ((c >= '0' && c <= '9') || c == '+' || c == '-' || c == '*' || c == '/' ||
+                        c == '(' || c == ')' || c == '.')
+                    {
+                        e.Handled = false; // Cho phép nhập
+                    }
+                    else
+                    {
+                        e.Handled = true; // Chặn ký tự không hợp lệ
+                    }
+                }
+            }
+        }
+
+        private void btnAns_Click(object sender, EventArgs e)
+        {
+            txtNhap.Text = frmHistory.HistorySorted()[0].Intput;
         }
     }
 }
