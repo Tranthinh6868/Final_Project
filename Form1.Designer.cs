@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnOpen = new System.Windows.Forms.Button();
             this.txtClose = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -358,6 +359,7 @@
             this.Controls.Add(this.btn7);
             this.Controls.Add(this.txtClose);
             this.Controls.Add(this.btnOpen);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
